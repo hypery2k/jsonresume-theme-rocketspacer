@@ -1,0 +1,65 @@
+<%
+/**
+ * @typedef {object} Project
+ * @property {string} name Project name
+ * @property {string} description Project description
+ *
+ * [Section] Projects
+ * @param {array.<Project>} projects
+ */
+%>
+
+<% if (projects && Array.isArray(projects) && projects.length > 0) { %>
+  <section id="projects" class="row">
+    <aside class="col-sm-3">
+      <h3>Projects</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <% projects.forEach((project) => { %>
+          <div class="col-sm-12">
+            <h4 class="strike-through">
+              <span><%= project.name %></span>
+              <span class="date">
+                <%= this.prettyDate(project.startDate) %> — <%= this.prettyDate(project.endDate) || 'Now' %>
+              </span>
+            </h4>
+            <% if (project.highlights)  { %>
+            <ul class="highlights">
+              <% project.highlights.forEach((highlight) => { %>
+                <li><%= highlight %></li>
+              <% }); %>
+            </ul>
+            <% } %>
+            <div class="summary">
+              <p><%- project.description %></p>
+            </div>
+            <% if (project.entity)  { %>
+            <div class="entity">
+              <p><%= project.entity %></p>
+            </div>
+            <% } %>
+            <% if (project.type)  { %>
+            <div class="type">
+              <p><%= project.type %></p>
+            </div>
+            <% } %>
+            <% if (project.keywords)  { %>
+            <ul class="keywords">
+              <h5>Keywords</h5>
+              <% project.keywords.forEach((keyword) => { %>
+                <li><%= keyword %></li>
+              <% }); %>
+            </ul>
+            <% } %>
+            <% if (project.url)  { %>
+            <div class="website pull-right">
+              <a target="_blank" href="<%= project.url %>"><%= project.url %></a>
+            </div>
+            <% } %>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+<% } %>
