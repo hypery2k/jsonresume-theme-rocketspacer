@@ -17,12 +17,19 @@
     <div class="col-sm-9">
       <div class="row">
         <% references.forEach((reference) => { %>
-          <div class="col-sm-11">
-            <p><%= reference.reference %></p>
-            <p class="name">
-              <strong>— <%= reference.name %></strong></p>
-            </p>
-            <br>
+          <div class="col-sm-12">
+            <h4 class="strike-through">
+              <span><%= reference.name %></span>
+              <span class="date"><%= this.prettyDate(reference.date) %></span>
+            </h4>
+            <div class="summary">
+              <p><%- reference.reference %></p>
+            </div>
+            <% if (reference.url)  { %>
+            <div class="website pull-right">
+              <a target="_blank" href="<%= reference.url %>"><%= reference.url %></a>
+            </div>
+            <% } %>
           </div>
         <% }); %>
       </div>
