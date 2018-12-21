@@ -31,7 +31,7 @@
               <% }); %>
             </ul>
             <% } %>
-            <div class="summary">
+            <div class="summary toggleable">
               <p><%- project.description %></p>
             </div>
             <% if (project.entity)  { %>
@@ -45,7 +45,7 @@
             </div>
             <% } %>
             <% if (project.keywords)  { %>
-            <ul class="keywords">
+            <ul class="keywords toggleable">
               <h5>Keywords</h5>
               <% project.keywords.forEach((keyword) => { %>
                 <li><%= keyword %></li>
@@ -53,7 +53,7 @@
             </ul>
             <% } %>
             <% if (project.url)  { %>
-            <div class="website pull-right">
+            <div class="website pull-right toggleable">
               <a target="_blank" href="<%= project.url %>"><%= project.url %></a>
             </div>
             <% } %>

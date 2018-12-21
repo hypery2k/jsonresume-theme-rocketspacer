@@ -14,6 +14,10 @@
   <% if (css) { %>
     <style type="text/css"><%- css %></style>
   <% } %>
+
+  <% if (js) { %>
+    <script type="text/javascript"><%- js %></script>
+  <% } %>
 </head>
 <body>
   <!-- HEADER -->
@@ -22,6 +26,7 @@
 			<div class="row">
         <div class="col-sm-3">
           <img src="<%= resume.basics.picture %>" class="img-responsive img-circle pull-right" style="max-height: 88px">
+          <button onclick="toggle()">Toggle Details</button>
         </div>
 				<div class="col-sm-9">
           <h1><%= resume.basics.name %></h1>

@@ -18,9 +18,10 @@ const productionRender = (() => {
     context  : Object.assign({}, helpers),
   });
   const css = fs.readFileSync(path.join(__dirname, 'assets/stylesheets/style.css'), 'utf8');
+  const js = fs.readFileSync(path.join(__dirname, 'assets/js/scripts.js'), 'utf8');
 
   // Return function that use the pre-built template
-  return (resume) => template({ css, resume });
+  return (resume) => template({ css, js, resume });
 })();
 
 // Development render method
@@ -31,8 +32,9 @@ const developmentRender = (resume) => {
     context  : Object.assign({}, helpers),
   });
   const css = fs.readFileSync(path.join(__dirname, 'assets/stylesheets/style.css'), 'utf8');
+  const js = fs.readFileSync(path.join(__dirname, 'assets/js/scripts.js'), 'utf8');
 
-  return template({ css, resume });
+  return template({ css, js, resume });
 };
 
 function exportPdf (resumeFile, pageFormat) {
