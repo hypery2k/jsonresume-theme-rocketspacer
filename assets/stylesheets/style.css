@@ -341,3 +341,11 @@ h4 span:first-child {
 	  width: 8.333333333333332%;
   }
 }
+
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
