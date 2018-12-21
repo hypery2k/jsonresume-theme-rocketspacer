@@ -35,7 +35,18 @@ const developmentRender = (resume) => {
   return template({ css, resume });
 };
 
+function exportPdf (resumeFile, pageFormat) {
+  let resume = require(path.join(__dirname, resumeFile))
+  const pdf = require('html-pdf')
+  const template = render(resume, pageFormat)
+
+  pdf.create(template, {format: pageFormat}).toFile(config.names.resume.pdf, function (err, res) {
+    if (err) return console.log(err)
+  })
+}
+
 // Exports
 module.exports = {
   render: NODE_ENV !== 'development' ? productionRender : developmentRender,
+  exportPdf: exportPdf,
 };
