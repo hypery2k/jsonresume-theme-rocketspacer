@@ -39,7 +39,7 @@
   <!-- CONTENT: Re-arrange sections order if necessary -->
   <div id="content" class="container">
     <!-- Contact -->
-    <%- include('partials/contact', { contact: { email: resume.basics.email, phone: resume.basics.phone, website: resume.basics.website } }); %>
+    <%- include('partials/contact', { contact: { email: resume.basics.email, phone: resume.basics.phone, website: resume.basics.website, location: resume.basics.location, birthdate: resume.basics.birthdate } }); %>
     <!-- About -->
     <%- include('partials/about', { summary: resume.basics.summary }); %>
     <!-- Profiles -->

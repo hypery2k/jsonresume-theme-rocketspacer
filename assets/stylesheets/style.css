@@ -10,7 +10,7 @@ body {
 }
 
 a {
-	color: #E32B46;
+	color: #286090;
 }
 
 a:focus, a:hover {
@@ -40,7 +40,7 @@ h1, h2, h3, h4 {
 }
 
 section {
-	margin-top: 24px;
+	margin-top: 14px;
 }
 
 ul, ol {
@@ -93,7 +93,7 @@ h4 span:first-child {
 }
 
 .col-sm-12 + .col-sm-12 {
-	margin-top: 30px;
+	margin-top: 5px;
 }
 
 #header {
@@ -167,6 +167,11 @@ h4 span:first-child {
 	.strike-through span:first-child {
 		padding-right: 20px;
 		margin-top: -12px;
+    display: inline-block;
+    width: 325px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
   }
 
 	.strike-through span + span {
@@ -183,7 +188,7 @@ h4 span:first-child {
   }
 
 	#content aside {
-		margin-bottom: 20px;
+		margin-bottom: 5px;
 		padding-right: 0;
 		text-align: left;
   }

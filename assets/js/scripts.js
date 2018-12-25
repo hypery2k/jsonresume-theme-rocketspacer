@@ -1,4 +1,4 @@
-(function(window){ 
+(function(window){
   window.toggle = function () {
     var elements = document.getElementsByClassName('toggleable');
     var arrayLength = elements.length;
@@ -12,4 +12,6 @@
     }
 
   }
+  // toggle default
+  setTimeout(function(){ window.toggle(); }, 100);
 })(window);
