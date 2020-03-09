@@ -15,26 +15,34 @@
     <aside class="col-sm-3"><h3>Contact</h3></aside>
     <div class="col-sm-9">
       <div class="row">
+        <% if (contact.email) { %>
         <div class="col-sm-8">
           <strong>Email</strong>
           <div>
             <a target="_blank" href="mailto:<%= contact.email %>"><%= contact.email %></a>
           </div>
         </div>
+        <% } %>
+        <% if (contact.birthdate) { %>
         <div class="col-sm-4">
           <strong>Birthdate</strong>
           <div class="birthdate"><%= contact.birthdate %></div>
         </div>
+        <% } %>
+        <% if (contact.website) { %>
         <div class="col-sm-8">
           <strong>Website</strong>
           <div>
             <a target="_blank" href="<%= contact.website %>"><%= contact.website %></a>
           </div>
         </div>
+        <% } %>
+        <% if (contact.phone) { %>
         <div class="col-sm-4">
           <strong>Phone</strong>
           <div class="phone"><%= contact.phone %></div>
         </div>
+        <% } %>
       </div>
     </div>
   </section>
